@@ -1,0 +1,12 @@
+CREATE TABLE professeur (idprof INTEGER PRIMARY KEY, nom TEXT);
+CREATE TABLE matieres (matid INTEGER PRIMARY KEY, nom TEXT, idprof INTEGER REFERENCES professeur(idprof));
+CREATE TABLE eleves (uid INTEGER PRIMARY KEY AUTOINCREMENT, nom TEXT, prenom TEXT, sexe TEXT, classe TEXT);
+CREATE TABLE controles (idcontrole INTEGER PRIMARY KEY, matiere TEXT, date_controle DATE, coeff TEXT);
+CREATE TABLE notes (id INTEGER PRIMARY KEY, uid TEXT REFERENCES eleves(uid), note TEXT, idcontrole INTEGER REFERENCES controles(idcontrole));
+INSERT INTO eleves (nom, prenom, sexe, classe) VALUES ("Pierre", "Jean", "M", "6A");
+INSERT INTO eleves (nom, prenom, sexe, classe) VALUES ("Jaques", "Paul", "M", "6A");
+INSERT INTO professeur (nom) VALUES ("M. Dubeau");
+INSERT INTO professeur (nom) VALUES ("M. Douffet");
+INSERT INTO professeur (nom) VALUES ("M. Lecuyer");
+INSERT INTO professeur (nom) VALUES ("M. Menard");
+INSERT INTO professeur (nom) VALUES ("M. Pineau");

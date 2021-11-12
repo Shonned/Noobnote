@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collège - NOOBNOTE</title>
+    <link rel="stylesheet" href="_assets/_css/app.css">
+    <link rel="stylesheet" href="_assets/_css/loader.css">
+    <link rel="stylesheet" href="_assets/_css/modal.css">
+    <link rel="stylesheet" href="_assets/_css/responsive.css">
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <script>if (document.URL.indexOf('file:')==0) document.location = "http://127.0.0.1:5080/"+document.URL.split('/').pop();</script>
+</head>
+<body>
+
+    <div id="nnFirstNav">
+        <div class="nnText">
+            <h3>Lycée</h3>
+            <h4>Espace Professeurs - M. FREDERICO DIBIADJO &nbsp; <i class='bx bx-qr'></i>&nbsp;<i class='bx bx-power-off'></i></h4>
+        </div>
+    </div>
+    <div id="nnMainNav">
+        <div class="nnMainNavItems">
+            <div class="nnMainNavItem nnMNIActive"><i class='bx bxs-home'></i></div>
+            <div class="nnMainNavItem">Mes données</div>
+            <div class="nnMainNavItem">Outils</div>
+            <div class="nnMainNavItem">Cahier de textes</div>
+            <div class="nnMainNavItem">Notes</div>
+            <div class="nnMainNavItem">Bulletins</div>
+            <div class="nnMainNavItem">Compétences</div>
+            <div class="nnMainNavItem">Résultats</div>
+            <div class="nnMainNavItem">Vie scolaire</div>
+            <div class="nnMainNavItem">Stage</div>
+            <div class="nnMainNavItem">Rencontres Parents/Profs</div>
+            <div class="nnMainNavItem">Emploi du temps</div>
+            <div class="nnMainNavItem">Communication</div>
+        </div>
+    </div>
+    <div id="nnSecondNav">
+        <div class="nnSecondNavItems">
+            <div class="nnSecondNavItem nnSNIActive">Page d'accueil</div>
+            <p>Précédente connexion le vendredi 17 septembre à 19h30</p>
+        </div>
+    </div>
+    <div id="nnMain">
+        <div class="nnCard nnCardEDT">
+            <h5 class="nnCardTitle">Emploi du temps</h5>
+            <a href="">
+                <img class="nnCardEDTImg" src="_assets/_img/edt.png" alt="">
+            </a>
+        </div>
+        <div>
+            <div class="nnCard">
+                <h5 class="nnCardTitle">Élèves</h5>
+                <div class="nnCardDevoir">
+                    <div class="nnEleves">
+                        <div class="nnNewDevoir">
+                            <select id="slct_controle">
+                                <option value="">SELECTIONE UN DEVOIR</option>
+                            </select>
+                            <button id="ajouter_notes" class="btn-devoir dnone">Valider les notes</button>
+                        </div>
+                        <div class="nnNewDevoir" style="border:0">
+                            <button id="saisir_notes" class="btn-devoir">Saisir notes</button>
+                            <button id="supprimer_devoir" class="btn-devoir ml-1">Supprimer controle</button>
+                        </div>
+                        <table id="eleves">
+                            <tr>
+                                <th id="nb_eleves">(REQUETE SQL) élèves</th>
+                                <th>Note</th>
+                                <th>Moyenne</th>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="nnCard mt-2">
+                <h5 class="nnCardTitle" id="nb_controles">Mes Devoirs (REQUETE SQL)</h5>
+                <div class="nnDevoirs">
+                    <div class="nnNewDevoir">
+                        <select>
+                            <option value="209">209</option>
+                            <option value="210" disabled>210</option>
+                            <option value="101" disabled>101</option>
+                            <option value="108" disabled>108</option>
+                        </select>
+                        <a href="#nnDevoirModal" class="btn-devoir">Créer un devoir</a>
+                    </div>
+                    <table id="controles">
+                        <tr>
+                            <th>ID</th>
+                            <th>Matière</th>
+                            <th>Date</th>
+                            <th>Coefficient</th>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="nnCard">
+                <h5 class="nnCardTitle">Notes</h5>
+                <div class="nnDevoirs">
+                    <table id="notes">
+                        <tr>
+                            <th>UID</th>
+                            <th>Nom, Prénom</th>
+                            <th>Note</th>
+                            <th>IDControle</th>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="nnCard mt-2">
+                <h5 class="nnCardTitle" id="nb_profs">Profésseurs</h5>
+                <div class="nnDevoirs">
+                    <table id="profs">
+                        <tr>
+                            <th>ID</th>
+                            <th>Nom</th>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div id="nnDevoirModal" class="nnModal">
+            <div>
+              <h5 class="nnModalTitle">Créer un devoir : MATHÉMATIQUES - 209</h5>
+              <div class="nnModalInfos">
+                <div>Notation sur : <input class="nnModalNote" type="text" value="20" disabled></div>
+                <div>Coefficient : <input class="nnModalCoeff" type="text" value="1,00" id="nnModalCoeff" disabled></div>
+              </div>
+              <div class="nnModalBtn">
+                <a href="" class="nnModalBtnCancel">Annuler</a>
+                <button class="nnModalBtnSubmit" id="nnModalBtnSubmit">Créer</button>
+              </div>
+            </div>
+        </div>
+        <div id="notes">
+
+        </div>
+    </div>
+    <script src="_assets/_js/app.js"></script>
+</body>
+</html>
