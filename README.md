@@ -1,5 +1,3 @@
-![BANNER](https://i.ibb.co/fSRkFYY/banner.png)
-
 # 💼 Noobnote
 ##### Le pronote en moins bien.
 + HTML, CSS, JS
