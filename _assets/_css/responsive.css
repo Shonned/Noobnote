@@ -1,0 +1,9 @@
+#nnFirstNav, .nnMainNavItems, #nnMain {
+    flex-wrap: wrap;
+}
+@media screen and (max-width: 486px) {
+    .nnCard {
+        display: block;
+        margin: 0 auto 15px auto;
+    }
+}
